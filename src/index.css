@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  --header-height: 56px;
+  --color-base: #000;
+  --bg-base: #fff;
+
+  color-scheme: light dark;
+  color: var(--color-base);
+  background-color: var(--bg-base);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --font-sans: 'Inter', 'sans-serif';
+  --font-heading: 'Poppins', 'sans-serif';
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .container {
+    max-width: 1600px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    height: 100%;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-base: #fff;
+    --bg-base: #000;
+  }
+}
