@@ -1,7 +1,6 @@
 import type {
   Movie,
   MovieDetails,
-  Person,
   CastMember,
   Video,
   Review,
@@ -18,7 +17,7 @@ export async function fetchPopularMovies(): Promise<Movie[]> {
     `${BASE_URL}/movie/popular?api_key=${API_KEY}&language=en-GB&page=1`
   );
   if (!res.ok) {
-    throw new Error('Не удалось загрузить популярные фильмы');
+    throw new Error('Failed to load popular movies');
   }
   const data = await res.json();
   return data.results;
@@ -29,7 +28,7 @@ export async function fetchMovieDetails(id: string): Promise<MovieDetails> {
     `${BASE_URL}/movie/${id}?api_key=${API_KEY}&language=en-GB`
   );
   if (!res.ok) {
-    throw new Error('Не удалось загрузить детали фильма');
+    throw new Error('Failed to load movie details');
   }
   return await res.json();
 }
@@ -38,7 +37,7 @@ export async function fetchTrendingMovies(): Promise<Movie[]> {
   const res = await fetch(
     `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=en-GB`
   );
-  if (!res.ok) throw new Error('Ошибка загрузки трендовых фильмов');
+  if (!res.ok) throw new Error('Error loading trending movies');
   const data = await res.json();
   return data.results;
 }
@@ -48,7 +47,7 @@ export async function fetchUpcomingMovies(): Promise<Movie[]> {
   const res = await fetch(
     `${BASE_URL}/movie/upcoming?api_key=${API_KEY}&language=en-GB&page=1`
   );
-  if (!res.ok) throw new Error('Ошибка загрузки предстоящих фильмов');
+  if (!res.ok) throw new Error('Error loading upcoming movies');
   const data = await res.json();
   return data.results;
 }
@@ -57,16 +56,7 @@ export async function fetchTopRatedMovies(): Promise<Movie[]> {
   const res = await fetch(
     `${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-GB&page=1`
   );
-  if (!res.ok) throw new Error('Ошибка загрузки топ фильмов');
-  const data = await res.json();
-  return data.results;
-}
-
-export async function fetchTrendingPeople(): Promise<Person[]> {
-  const res = await fetch(
-    `${BASE_URL}/trending/person/day?api_key=${API_KEY}&language=en-GB`
-  );
-  if (!res.ok) throw new Error('Ошибка загрузки популярных людей');
+  if (!res.ok) throw new Error('Error loading top movies');
   const data = await res.json();
   return data.results;
 }
