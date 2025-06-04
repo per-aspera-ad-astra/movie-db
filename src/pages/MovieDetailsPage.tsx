@@ -61,7 +61,7 @@ const MovieDetailsPage = () => {
             {movie.release_date}
           </p>
           <p className='mb-4'>{movie.overview}</p>
-          {movie.vote_average !== 0 && (
+          {!!movie.vote_average && (
             <p className='mb-2'>
               <strong className={infoClasses}>Vote:</strong>{' '}
               {Number(movie.vote_average).toFixed(2) + ' / 10'}
@@ -82,14 +82,14 @@ const MovieDetailsPage = () => {
             <strong className={infoClasses}>Status:</strong> {movie.status}
           </p>
 
-          {movie.budget !== 0 && (
+          {!!movie.budget && (
             <p>
               <strong className={infoClasses}>Budget:</strong>{' '}
               {movie.budget.toLocaleString()} $
             </p>
           )}
 
-          {movie.revenue !== 0 && (
+          {!!movie.revenue && (
             <p>
               <strong className={infoClasses}>Revenue:</strong>{' '}
               {movie.revenue.toLocaleString()} $
