@@ -43,7 +43,7 @@ const MovieDetailsPage = () => {
             alt={movie.title}
             className='w-full max-w-sm rounded-md '
             onError={(e) => {
-              e.currentTarget.src = '/fallback-movie.jpg';
+              e.currentTarget.src = '/movie-db/fallback-movie.jpg';
             }}
           />
         </div>

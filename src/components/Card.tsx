@@ -13,7 +13,7 @@ const Card = ({ movie }: { movie: Movie }) => {
           alt={movie.title}
           className='w-full aspect-2/3 object-top object-cover group-hover/card:scale-105 transition transform duration-300'
           onError={(e) => {
-            e.currentTarget.src = '/fallback-movie.jpg';
+            e.currentTarget.src = '/movie-db/fallback-movie.jpg';
           }}
         />
       </div>

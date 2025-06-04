@@ -7,7 +7,7 @@ import { GenresProvider } from './context/GenresContext';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <GenresProvider>
         <App />
       </GenresProvider>

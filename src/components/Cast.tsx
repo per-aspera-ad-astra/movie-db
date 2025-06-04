@@ -19,7 +19,7 @@ const Cast = ({ movieId }: { movieId: number }) => {
               src={
                 member.profile_path
                   ? `https://image.tmdb.org/t/p/w185${member.profile_path}`
-                  : '/fallback-actor.jpg'
+                  : '/movie-db/fallback-actor.jpg'
               }
               alt={member.name}
               className='rounded-full w-20 h-20 object-cover mx-auto'
